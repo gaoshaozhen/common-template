@@ -1,0 +1,12 @@
+[
+	{
+		id:1,
+		name:"电器",
+		parentId:0
+	},
+	{
+		id:2,
+		name:"电磁炉",
+		parentId:1
+	}	
+]

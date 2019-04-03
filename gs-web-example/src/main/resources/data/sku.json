@@ -1,0 +1,8 @@
+[
+	{
+		id : 1,
+		productId:1
+		stock:100,
+		price:100
+	}
+]
