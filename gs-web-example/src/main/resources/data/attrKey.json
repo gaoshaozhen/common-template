@@ -1,6 +1,7 @@
 [
 	{
 		id : 1,
-		name : "【品牌】"
+		name : "【品牌】",
+		categoryId:1
 	}
 ]

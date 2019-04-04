@@ -1,6 +1,7 @@
 [
 	{
 		id : 1,
+		categoryId:1,
 		title : "颜色",
 		sortParam:1
 	}
