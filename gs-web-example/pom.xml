@@ -6,6 +6,7 @@
 		<groupId>com.gs.parent</groupId>
 		<artifactId>gs-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../gs-parent</relativePath>
 	</parent>
 	<groupId>com.gs.web</groupId>
 	<artifactId>gs-web-example</artifactId>
