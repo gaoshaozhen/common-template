@@ -24,6 +24,7 @@ public class PoiUtils {
 			if (sheet == null) {
 				return null;
 			}
+			int lastRow = sheet.getLastRowNum();
 			for (int rowNum = startRow; rowNum <= endRow; rowNum++) {
 				// 获得当前行
 				XSSFRow row = sheet.getRow(rowNum);
@@ -33,6 +34,30 @@ public class PoiUtils {
 					String value = cell.getStringCellValue();
 					rowList.add(value);
 				}
+			}
+		}
+		return list;
+	}
+
+	public static List<List<String>> readFirstSheet(InputStream in, int colStart, int colEnd) throws IOException {
+		List<List<String>> list = new ArrayList<>();
+		try (XSSFWorkbook workbook = new XSSFWorkbook(in)) {
+			// 获得当前sheet工作表
+			XSSFSheet sheet = workbook.getSheetAt(0);
+			if (sheet == null) {
+				return null;
+			}
+			int lastRow = sheet.getLastRowNum();
+			for (int rowNum = 0; rowNum <= lastRow; rowNum++) {
+				// 获得当前行
+				XSSFRow row = sheet.getRow(rowNum);
+				List<String> rowList = new ArrayList<>();
+				for (int cellNum = colStart; cellNum <= colEnd; cellNum++) {
+					XSSFCell cell = row.getCell(cellNum);
+					String value = cell.getStringCellValue();
+					rowList.add(value);
+				}
+				list.add(rowList);
 			}
 		}
 		return list;
